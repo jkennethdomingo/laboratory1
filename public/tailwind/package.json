@@ -1,0 +1,14 @@
+{
+  "name": "appdevact1",
+  "version": "1.0.0",
+  "description": "## What is CodeIgniter?",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "tailwind:watch": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+  },
+  "author": "",
+  "license": "ISC"
+}
