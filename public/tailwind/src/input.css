@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Noto Sans';
+    src: url('../../assets/fonts/NotoSans-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'gg Sans';
+    src: url('../../assets/fonts/gg-sans-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'gg Sans Medium';
+    src: url('../../assets/fonts/gg-sans-Medium.ttf');
+}
