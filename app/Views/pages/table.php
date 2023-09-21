@@ -34,10 +34,4 @@
 <div class="pagination mt-4 flex flex-row justify-start">
     <?= $pager->links('default', 'pagination') ?>
 </div>
-<div class="mt-3 flex justify-between items-center">
-    <div>
-        <span class="text-center text-sub-header mt-2 font-Notosans text-sm cursor-default">Create new account?</span>
-        <a href="/" class="text-link font-Notosans text-sm hover:underline">Register</a>
-    </div>
-</div>
 <?php $this->endSection(); ?>

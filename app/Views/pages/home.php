@@ -73,9 +73,6 @@ foreach ($fields as $field) {
     </div>     
 </form>
 <div class="mt-2 flex justify-between items-center">
-    <div>
-        <a href="<?= base_url('table') ?>" class="text-link font-Notosans text-sm hover:underline">Already have an account?</a>
-    </div>
 </div>
 <?php $this->endSection(); ?>
 
