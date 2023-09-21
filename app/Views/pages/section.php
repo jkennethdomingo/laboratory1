@@ -20,24 +20,24 @@ foreach ($fields as $field) {
     }
 }
 ?>
-<h1 class="text-center font-semibold text-txt font-customsb text-2xl cursor-default">List of Sections</h1>
+<h1 class="text-center font-semibold dark:text-txt font-customsb text-2xl cursor-default">List of Sections</h1>
 
 <div class="mt-8 overflow-x-auto">
-    <table class="w-full border-collapse border border-white">
+    <table class="w-full border-collapse border border-black dark:border-white">
         
         <thead>
             <tr>
-                <th class="px-4 py-2 text-center bg-txtbx text-white font-semibold cursor-default">Section Name</th>
-                <th class="px-4 py-2 text-center bg-txtbx text-white font-semibold cursor-default">Action</th>
+                <th class="px-4 py-2 text-center bg-white-tbl dark:bg-txtbx dark:text-white font-semibold cursor-default">Section Name</th>
+                <th class="px-4 py-2 text-center bg-white-tbl dark:bg-txtbx dark:text-white font-semibold cursor-default">Action</th>
             </tr>
         </thead>
         <tbody>
             <?php foreach ($sections as $section): ?>
-                <tr class="group hover:bg-button">
-                    <td class="px-4 py-2 text-white cursor-default"><?= $section['Section'] ?></td>
-                    <td class="px-4 py-2 text-white flex justify-center items-center gap-10"> 
-                        <a href="/editSection/<?= $section['id'] ?>"><img src="/assets/icons/edit.svg" class="hover:scale-125 transition-transform ease-in-out duration-300" alt="Edit Icon" width="24" height="24"></a>
-                        <a href="/deleteSection/<?= $section['id'] ?>"><img src="/assets/icons/outline-delete.svg" class="hover:scale-125 transition-transform ease-in-out duration-300" alt="Delete Icon" width="26" height="26"></a>
+                <tr class="group hover:bg-white-btn hover:text-white dark:hover:bg-button">
+                    <td class="px-4 py-2 dark:text-white cursor-default"><?= $section['Section'] ?></td>
+                    <td class="px-4 py-2 dark:text-white flex justify-center items-center gap-10"> 
+                        <a href="/editSection/<?= $section['id'] ?>"><img src="/assets/icons/edit.svg" class="invert dark:invert-0 hover:invert-0 hover:scale-125 transition-transform ease-in-out duration-300" alt="Edit Icon" width="24" height="24"></a>
+                        <a href="/deleteSection/<?= $section['id'] ?>"><img src="/assets/icons/outline-delete.svg" class="invert dark:invert-0 hover:invert-0 hover:scale-125 transition-transform ease-in-out duration-300" alt="Delete Icon" width="26" height="26"></a>
                     </td>
                 </tr>
             <?php endforeach; ?>
