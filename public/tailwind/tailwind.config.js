@@ -8,6 +8,7 @@ module.exports = {
     extend: {
       colors: {
         'login-main-bg': '#5865f2',
+        'main-bg': '#1e1f22',
         'main-cont': '#f7f5fd',
         'txt': '#f0f3f5',
         'sub-header': '#a8adb4',
@@ -19,6 +20,12 @@ module.exports = {
         'button': '#4752c4',
         'txtbx': '#1e1f22',
         'req': '#f03f42',
+        'white-bg': '#f5f5f7',
+        'white-txt': '#1d1d1f',
+        'white-btn': '#3d44c3',
+        'white-cont': '#e9e9e9',
+        'white-input': '#f6f6f8',
+        'white-tbl': '#d0d0d4',
       },
       backgroundImage: {
           'login-bg': "url(/assets/web-images/login-bg.png)",
