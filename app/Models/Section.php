@@ -8,12 +8,12 @@ class Section extends Model
 {
     protected $DBGroup          = 'default';
     protected $table            = 'table_section';
-    protected $primaryKey       = 'Section';
+    protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $allowedFields    = ['Section'];
 
     // Dates
     protected $useTimestamps = false;

@@ -73,6 +73,29 @@ class MainController extends BaseController
         return true;
     }
 
+    protected function validateSection()
+    {
+        $id = $this->request->getVar('id');
+        $validationRules = [
+            'Section' => [
+                'label'  => 'Section Name',
+                'rules'  => 'required|is_unique[table_section.Section,id,' . $id . ']',
+                'errors' => [
+                    'required' => 'The {field} field is required.',
+                ],
+            ],
+        ];
+
+        $this->validation->setRules($validationRules);
+
+        if (!$this->validation->withRequest($this->request)->run()) {
+            return false;
+        }
+
+        return true; 
+    }
+
+
     public function save()
     {
         $id = $this->request->getVar('id');
@@ -135,6 +158,60 @@ class MainController extends BaseController
         $data['currentAction'] = 'update';
 
         return view('pages/home', $data);
+    }
+
+    public function section()
+    {
+        $data['sections'] = $this->section->findAll();
+        $data['currentPage'] = 'home';
+
+    return view('pages/section', $data);
+    }
+
+    public function add()
+    {
+        $id = $this->request->getVar('id');
+        $data = [
+            'Section' => $this->request->getVar('Section'),
+        ];
+        
+        $sections = $this->section->findAll();
+
+        if ($this->validateSection()) {
+            if ($id) {
+                $this->section->update($id, $data);
+            } else {
+                $this->section->insert($data);
+            }
+
+            return redirect()->to(base_url('section'));
+        } else {
+            $data['currentPage'] = 'home';
+            $data['currentAction'] = 'insert';
+            $data['sections'] = $sections; 
+            $data['errors'] = $this->validation->getErrors();
+            return view('pages/section', $data);
+        }
+    }
+
+    public function remove($id)
+    {
+        $this->section->delete($id);
+        return redirect()->to(base_url('section'));
+    }
+
+    public function editSection($id)
+    {
+        $data = [
+            'action' => $id ? 'Update' : 'Create',
+            'sections' => $this->section->findAll(),
+            'val' => $this->section->where('id', $id)->first(),
+            'actionSection' => $id ? 'Update' : 'Create',
+        ];
+
+        $data['currentPage'] = 'home';
+        $data['currentAction'] = 'update';
+        return view('pages/section', $data);
     }
 
 
